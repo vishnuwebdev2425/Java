@@ -60,3 +60,30 @@ class Problem2{
 
     }
 }
+
+class Problem2v2{
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the Lenght Of Array");
+        int a =scan.nextInt();
+        int [] intialArray=new int [a];
+        int [] finalarray=new int[a];
+        for(int i=0;i<a;i++){
+            System.out.print("Enter the Values : ");
+            int value=scan.nextInt();
+            intialArray[i]=value;
+
+        }
+        int prod=1;
+        for (int i=0;i<a;i++){
+            prod=prod*intialArray[i];
+        }
+        for(int i=0;i<a;i++){
+            int finalresult=prod/intialArray[i];
+            finalarray[i]=finalresult;
+        }
+        for(int i=0;i<a;i++){
+            System.out.print(finalarray[i] +" ");
+        }
+    }
+}
