@@ -1,4 +1,4 @@
-class Vishnu{
+class Vishnu {
     public static void main(String[] args){
         int [] arr={3,1,2,4,5};
         int min=Integer.MAX_VALUE;
