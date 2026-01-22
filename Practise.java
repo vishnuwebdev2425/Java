@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Vishnu {
@@ -226,5 +227,59 @@ class Problem5{
             System.out.println("The Total Sum of Highest Profit is : " + ThirdResult);
         }
         
+    }
+}
+
+
+class Problem6{
+    static int gettingresult(int [] a ){
+        Scanner scan=new Scanner(System.in);
+        System.out.print("Enter the Element to find : ");
+        int element =scan.nextInt();
+        for(int i=0;i<a.length;i++){
+            if(a[i]==element){
+                return i;
+            }
+
+
+        }
+        return -1;
+
+       
+
+    }
+    public static void main(String[] args) {
+        int [] a={5,3,1,4,0,5};
+        int result=gettingresult(a);
+        System.out.println(result);
+        
+      
+    }
+}
+
+
+class Problem7{
+    static void gettingpairvalues( int [] a){
+        System.out.println("The Array Pair are : ");
+        for(int i=0;i<a.length-1;i++){
+            for(int j=i+1;j<a.length;j++){
+                System.out.println(a[i]+" " +a[j]);
+
+                
+            }
+        }
+    }
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.print("Enter the Length of An Array : ");
+        int value=scan.nextInt();
+        int [] a= new int [value];
+        for(int i=0;i<value;i++){
+            int addingvalue=scan.nextInt();
+            a[i]=addingvalue; 
+        }
+        gettingpairvalues(a);
+
+
     }
 }
