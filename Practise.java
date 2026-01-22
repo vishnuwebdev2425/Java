@@ -283,3 +283,39 @@ class Problem7{
 
     }
 }
+
+class Problem8{
+    static int gettingkfinalSum(int [] a){
+        Scanner scan=new Scanner(System.in);
+
+        System.out.print("Enter the Sum Find ");
+        int Checking_value=scan.nextInt();
+        int count=0;
+        for(int i=0;i<a.length-1;i++){
+            for(int j=0;j<a.length;j++){
+                int value=a[i]+a[j];
+                if(value==Checking_value){
+                    System.out.println("The Sum of Pair are : " +a[i]+" "+a[j]);
+                }
+                
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.print("Enter the Length of Array ");
+        int value=scan.nextInt();
+        int [] a=new int [value];
+        System.out.println("Enter the Values");
+        for(int i=0;i<value;i++){
+            int addingvalue=scan.nextInt();
+            a[i]=addingvalue;
+        }
+        int result=gettingkfinalSum(a);
+        if(result>0){
+            System.out.println("There is no Such Pairs");
+        }
+
+    }
+}
