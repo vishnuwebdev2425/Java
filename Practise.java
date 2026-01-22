@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 class Vishnu {
@@ -148,5 +149,82 @@ class Problem4{
         int finalresult=max+SecondMax;
 
         System.out.println("The Sum of Two Largest Number is : " + finalresult + " ");
+    }
+}
+
+class Problem5{
+    static int CheckingTwoPairProductMax(int [] intialArray){
+       int Firstmax=intialArray[0];
+       int SecondMax=Integer.MIN_VALUE;
+       for(int i=1;i<intialArray.length;i++){
+        if(intialArray[i]>Firstmax){
+            SecondMax=Firstmax;
+            Firstmax=intialArray[i];
+        }
+        else if(intialArray[i]<Firstmax && intialArray[i]>SecondMax){
+            SecondMax=intialArray[i];
+        }
+       }
+       int SumPair=Firstmax*SecondMax;
+       return SumPair;
+
+        
+    }
+
+    static int CheckingProductOfTwoMin(int [] intialArray){
+        int FirstMin=intialArray[0];
+        int SecondMin=Integer.MIN_VALUE;
+        for(int i=1;i<intialArray.length;i++){
+            if(intialArray[i]<FirstMin){
+                SecondMin=FirstMin;
+                FirstMin=intialArray[i];
+            }
+            else if(intialArray[i]<FirstMin && intialArray[i]<SecondMin){
+                SecondMin=intialArray[i];
+            }
+        }
+        int SumPair=FirstMin*SecondMin;
+        return SumPair;
+
+    }
+    static int CheckingProductofMaxAndMin(int [] intialArray){
+        int FirstMax=Integer.MIN_VALUE;
+        int FirstMin=Integer.MAX_VALUE;
+        for(int i=0;i<intialArray.length;i++){
+            if(intialArray[i]>FirstMax){
+                FirstMax=intialArray[i];
+            }
+        }
+        for(int i=0;i<intialArray.length;i++){
+            if(intialArray[i]<FirstMin){
+                FirstMin=intialArray[i];
+            }
+        }
+       
+        int value=FirstMax * FirstMin;
+        return value;
+    }
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.print("Enter the Lenght Of an Array : ");
+        int value=scan.nextInt();
+        int []intialArray=new int [value];
+        for(int i=0;i<value;i++){
+            int adddingvalue=scan.nextInt();
+            intialArray[i]=adddingvalue;
+
+        }
+        int FirstResult=CheckingTwoPairProductMax(intialArray);
+        int SecondResult=CheckingProductOfTwoMin(intialArray);
+        int ThirdResult=CheckingProductofMaxAndMin(intialArray);
+        if(FirstResult<SecondResult && FirstResult<ThirdResult){
+            System.out.println("The Total Sum of Highest Profit is : " + FirstResult);
+        }
+        else if(SecondResult<ThirdResult){
+            System.out.println("The Total Sum of Highest Profit is : " + SecondResult);
+        }else{
+            System.out.println("The Total Sum of Highest Profit is : " + ThirdResult);
+        }
+        
     }
 }
