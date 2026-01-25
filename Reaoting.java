@@ -27,6 +27,23 @@ class Reaoting {
         }
         return max;
     }
+
+    static int gettingsmallestrepeatingnumber(int[] a){
+        int max=-1;
+        for(int i=0;i<a.length-2;i++){
+            if(a[i]==a[i+1]){
+                max=a[i];
+                return max;
+            }
+        }
+        if(max==-1){
+            if(a[a.length-2]==a[a.length-1]){
+                max=a[a.length-1];
+                return max;
+            }
+        }
+        return max;
+    }
     public static void main(String[] args){
         Scanner scan=new Scanner(System.in);
         System.out.print("Enter the Length Of an Array : ");
@@ -40,6 +57,10 @@ class Reaoting {
        }
        int result =gettingfinalresults(a);
        System.out.println("The Maximum Element is : " + result);
+       int finalresult=gettingsmallestrepeatingnumber(a);
+       System.out.println(finalresult);
     }
     
 }
+
+
