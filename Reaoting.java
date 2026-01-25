@@ -63,4 +63,37 @@ class Reaoting {
     
 }
 
+class Missing{
+    static int gettingmissingvalue(int []a){
+        int diff=a[1]-a[0];
+        for(int i=0;i<a.length-1;i++){
+            int distance=a[i+1]-a[i];
+            if(diff>=distance){
+                diff=distance;
+            }
+        }
+        for(int j=0;j<a.length-1;j++){
+            int checking_value=a[j+1]-a[j];
+            if(checking_value!=diff){
+                return a[j]+diff;
+            }
+        }
+        return -1;
+      
+    }
+    public static void main(String[] args){
+        System.out.print("Enter the lenght of an Array : ");
+        Scanner scan=new Scanner(System.in);
+        int length=scan.nextInt();
+        int []a=new int [length];
+        System.out.print("enter the Values of an array : ");
+        for(int i=0;i<a.length;i++){
+            int value=scan.nextInt();
+            a[i]=value;
+        }
+        int missingvalue=gettingmissingvalue(a);
+        System.out.println("The Missingvalue in that array is : "+ missingvalue);
+    }
+}
+
 
