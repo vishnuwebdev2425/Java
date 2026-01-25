@@ -2,20 +2,28 @@ import java.util.Scanner;
 
 class Reaoting {
     static int gettingfinalresults(int[] a){
-        int max=0;
-        int count=0;
-        for(int i=0;i<a.length-1;i++){
-            if(a[i]==a[i+1]){
-                count+=1;
-                if(max<a[i]){
-                    max=a[i];
-                    count=0;
-                }
-            }
+        // int max=0;
+        // int count=0;
+        // for(int i=0;i<a.length-1;i++){
+        //     if(a[i]==a[i+1]){
+        //         count+=1;
+        //         if(max<a[i]){
+        //             max=a[i];
+        //             count=0;
+        //         }
+        //     }
 
-        }
-        if(count!=0){
-            max=a[a.length-1];
+        // }
+        // if(count!=0){
+        //     max=a[a.length-1];
+        // }
+        // return max;
+        int max=0;
+        for(int i=a.length-2;i>=0;i--){
+            if(a[i]==a[i+1]){
+                max=a[i];
+                return max;
+            }
         }
         return max;
     }
