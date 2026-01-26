@@ -131,10 +131,10 @@ class Sortedarray{
         return a;
     }
     static int gettingdiffarra(int [] b){
-        int diff=Integer.MIN_VALUE;
+        int diff=Integer.MAX_VALUE;
         for(int i=0;i<b.length-2;i++){
             int value=b[i+1]-b[i];
-            if(value>diff){
+            if(value<diff){
                 diff=value;
             }
         }
@@ -169,5 +169,20 @@ class Sortedarray{
 
         int finalresults=gettingmissingvalue(b,difference);
         System.out.println("The Missing Value is : "+finalresults);
+    }
+}
+
+class RotatedSortedArray{
+    public static void main(String[] args){
+        int a[]={1,2,3,5,6,7};
+        int length=a.length+1;
+        int finalresult=length*((length+1)/2);
+        int sum=0;
+        for(int i=0;i<a.length;i++){
+            sum+=a[i];
+        }
+        int result=finalresult-sum;
+        System.out.println("The Missing Number is : "+result);
+
     }
 }
