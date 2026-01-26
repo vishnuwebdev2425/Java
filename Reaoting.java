@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Reaoting {
@@ -112,5 +113,61 @@ class PrintingStart{
             System.out.println();
 
         }
+    }
+}
+
+class Sortedarray{
+    static int [] gettingsortedarray(int[] a){
+        for(int i=0;i<a.length;i++){
+            for(int j=0;j<a.length;j++){
+                if(a[i]<a[j]){
+                    int value_1=a[i];
+                    int value_2=a[j];
+                    a[i]=value_2;
+                    a[j]=value_1;
+                }
+            }
+        }
+        return a;
+    }
+    static int gettingdiffarra(int [] b){
+        int diff=Integer.MIN_VALUE;
+        for(int i=0;i<b.length-2;i++){
+            int value=b[i+1]-b[i];
+            if(value>diff){
+                diff=value;
+            }
+        }
+        return diff;
+
+
+    }
+    static int gettingmissingvalue(int [] b,int difference){
+        for(int i=0;i<=b.length-1;i++){
+            if(b[i+1]-b[i]!=difference){
+                int value=b[i]+difference;
+                return value;
+            }
+        }
+        return -1;
+
+    }
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.print("Enter the Length of the Number : ");
+        int value=scan.nextInt();
+        int[]a=new int [value];
+        System.out.print("Enter  the Values : ");
+        for(int i=0;i<a.length;i++){
+            int insidevalue=scan.nextInt();
+            a[i]=insidevalue;
+        }
+        int [] b=gettingsortedarray(a);
+        System.out.println(Arrays.toString(a));
+        int difference=gettingdiffarra(b);
+        System.out.println(difference);
+
+        int finalresults=gettingmissingvalue(b,difference);
+        System.out.println("The Missing Value is : "+finalresults);
     }
 }
