@@ -73,7 +73,7 @@ public class Exx {
 
 
 
-import java.util.*;
+
 public class Merging {
 	static int [] gettingfinaloutput(int [] firstarray,int [] Secondarray,int [] Thirdarray) {
 		System.out.print("Everything Work Fine ");
